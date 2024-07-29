@@ -1,0 +1,275 @@
+@import url('https://fonts.cdnfonts.com/css/hockes');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-image: radial-gradient(circle at 16% 83%, rgba(148, 148, 148, 0.06) 0%, rgba(148, 148, 148, 0.06) 50%, rgba(0, 0, 0, 0.06) 50%, rgba(0, 0, 0, 0.06) 100%), radial-gradient(circle at 68% 87%, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 50%, rgba(105, 105, 105, 0.06) 50%, rgba(105, 105, 105, 0.06) 100%), radial-gradient(circle at 38% 50%, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.06) 50%, rgba(0, 0, 0, 0.06) 50%, rgba(0, 0, 0, 0.06) 100%), linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0));
+}
+
+.navbar {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0);
+  padding: 1rem 2rem;
+  color: white;
+  position: fixed;
+  width: 100%;
+  height: 55px;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  border-bottom: 1px solid;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  transition: background 0.3s, color 0.3s;
+  display: block;
+  border-radius: 5px;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.808);
+  color: #000000;
+  border-radius: 5px;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-dropdown {
+  position: relative;
+}
+
+.navbar-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  min-width: 10rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.navbar-dropdown-content a {
+  padding: 0.75rem 1.5rem;
+}
+
+.navbar-dropdown:hover .navbar-dropdown-content {
+  display: block;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+}
+
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.section h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #ffffff;
+    font-family: 'HOCKES', sans-serif;
+    font-weight: 100;
+    animation: blink 3s infinite; /* Animación de parpadeo */
+    color: #ff69b4; /* Color rosa */
+}
+@keyframes blink {
+  50% {
+      color: #fff; /* Cambio de rosa a blanco */
+  }
+}
+
+.section p {
+    color: #ffff;
+    max-width: 800px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.perfil {
+  position: relative;
+  width: 200px;
+  object-fit: cover;
+  height: 200px;
+  border-radius: 1000px;
+  margin-bottom: -10px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 150px 35px rgba(255, 124, 146, 0.75); /* Aura rosada */
+  animation: border-color-change 3s infinite alternate;
+}
+
+@keyframes border-color-change {
+  0% {
+      border-color: #ffffff; /* Inicial color rosa */
+  }
+  50% {
+      border-color: #ffd3e9; /* Cambio a azul */
+  }
+  100% {
+      border-color: #ff69b4; /* Vuelta a color rosa */
+  }
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    border: 2px solid #ffff;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.356); /* Aura rosada */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: inherit; /* Mantiene el color del texto */
+    display: block; /* Asegura que el enlace cubra toda la tarjeta */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 160px;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-content h3 {
+    color: #fff;
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+
+.card-content p {
+    font-size: 1em;
+    margin: 0 0 20px;
+}
+
+.tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tag {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: white;
+}
+
+.tag.html {
+    background-color: #e34c26;
+}
+
+.tag.css {
+    background-color: #264de4;
+}
+
+.tag.js {
+    background-color: #f0db4f;
+    color: #000;
+}
+
+
+footer {
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  bottom: 0;
+}
+
+
+@media (max-width: 768px) {
+
+
+    .section {
+        padding: 40px 10px;
+    }
+
+    .section h1 {
+        text-align: center;
+        font-size: 2em;
+    }
+
+    .section p {
+        max-width: 100%;
+    }
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 90%;
+    }
+}
