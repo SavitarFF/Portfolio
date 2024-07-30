@@ -10,17 +10,17 @@
     body, html {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    overflow-x: hidden;
 }
 
 .section {
     width: 100%;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    box-sizing: border-box;
     opacity: 0;
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
 }
 
-/* Animaciones personalizadas para cada sección */
 #inicio {
     transform: scale(0.9);
 }
@@ -58,126 +58,127 @@
 }
 
 #particles-js {
-      position: absolute;
-      width: 100%;
-      height: 2500px;
-    }
+    position: absolute;
+    width: 100%;
+    height: 2500px;
+}
     </style>
 </head>
 
 <body>
     <div id="particles-js"></div>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script>
-  // Configuración de Particles.js
-  particlesJS('particles-js', {
-    "particles": {
-      "number": {
-        "value": 80, // Cantidad de partículas
-        "density": {
-          "enable": true,
-          "value_area": 800
-        }
-      },
-      "color": {
-        "value": "#ff0055" // Color de las partículas
-      },
-      "shape": {
-        "type": "circle", // Forma de las partículas
-        "stroke": {
-          "width": 0,
-          "color": "#ff0055"
-        },
-        "polygon": {
-          "nb_sides": 5
-        }
-      },
-      "opacity": {
-        "value": 0.5, // Opacidad de las partículas
-        "random": true,
-        "anim": {
-          "enable": true,
-          "speed": 1,
-          "opacity_min": 0.1,
-          "sync": false
-        }
-      },
-      "size": {
-        "value": 3, // Tamaño de las partículas
-        "random": true,
-        "anim": {
-          "enable": false,
-          "speed": 40,
-          "size_min": 0.1,
-          "sync": false
-        }
-      },
-      "line_linked": {
-        "enable": true,
-        "distance": 150,
-        "color": "#ff0055",
-        "opacity": 0.4,
-        "width": 1
-      },
-      "move": {
-        "enable": true,
-        "speed": 6,
-        "direction": "none",
-        "random": false,
-        "straight": false,
-        "out_mode": "out",
-        "bounce": false,
-        "attract": {
-          "enable": false,
-          "rotateX": 600,
-          "rotateY": 1200
-        }
-      }
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": {
-          "enable": true,
-          "mode": "grab"
-        },
-        "onclick": {
-          "enable": true,
-          "mode": "push"
-        },
-        "resize": true
-      },
-      "modes": {
-        "grab": {
-          "distance": 140,
-          "line_linked": {
-            "opacity": 1
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" async></script>
+    <script>
+    // Configuración de Particles.js
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": 50, // Cantidad de partículas reducida
+          "density": {
+            "enable": true,
+            "value_area": 800
           }
         },
-        "bubble": {
-          "distance": 400,
-          "size": 40,
-          "duration": 2,
-          "opacity": 8,
-          "speed": 3
+        "color": {
+          "value": "#ff0055"
         },
-        "repulse": {
-          "distance": 200,
-          "duration": 0.4
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#ff0055"
+          },
+          "polygon": {
+            "nb_sides": 5
+          }
         },
-        "push": {
-          "particles_nb": 4
+        "opacity": {
+          "value": 0.5,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
         },
-        "remove": {
-          "particles_nb": 2
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ff0055",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 3, // Velocidad de movimiento reducida
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
         }
-      }
-    },
-    "retina_detect": true
-  });
-</script>
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+    </script>
+
     <nav class="navbar">
         <div class="navbar-brand">PORTFOLIO DEV</div>
         <div class="menu-icon" onclick="toggleMenu()">
@@ -196,13 +197,12 @@
     <section id="inicio" class="section">
         <img class="perfil" src="hizoka2.jpg" alt="Imagen de HIZ0KA.DEV">
         <h1>HIZ0KA.DEV</h1>
-        <p>+5 años de experiencia. ingeniero de software y ingeniero de ciencia de datos de peru. especializado en
-            creacion de paginas web.</p>
+        <p>+5 años de experiencia. Ingeniero de software y de ciencia de datos de Perú, especializado en creación de páginas web.</p>
     </section>
 
     <section id="experiencia" class="section">
         <h1>Experiencia laboral</h1>
-        <h1>Creador de Multiples paginas web...</h1>
+        <h1>Creador de múltiples páginas web...</h1>
         <p>
             Diseño y desarrollo de sitios web personalizados que combinan funcionalidad y estética. 
             Experto en transformar ideas en experiencias digitales atractivas, optimizadas para el 
@@ -222,7 +222,7 @@
 
     <section id="proyectos" class="section">
         <h1>Proyectos</h1>
-        <p>Aqui estan los proyectos</p>
+        <p>Aquí están los proyectos</p>
         <div class="card-container">
             <div class="card">
                 <div class="card-image">
@@ -230,7 +230,7 @@
                 </div>
                 <div class="card-content">
                     <h3>SPOTIFY</h3>
-                    <p>Spotify hecho desde cero con html css y js.</p>
+                    <p>Spotify hecho desde cero con HTML, CSS y JS.</p>
                     <div class="tags">
                         <span class="tag html">HTML</span>
                         <span class="tag css">CSS</span>
@@ -244,7 +244,7 @@
                 </div>
                 <div class="card-content">
                     <h3>NETFLIX</h3>
-                    <p>Netflix hecho desde cero con html css y js.</p>
+                    <p>Netflix hecho desde cero con HTML, CSS y JS.</p>
                     <div class="tags">
                         <span class="tag html">HTML</span>
                         <span class="tag css">CSS</span>
@@ -258,7 +258,7 @@
                 </div>
                 <div class="card-content">
                     <h3>DISNEY</h3>
-                    <p>Disney hecho con HTML, CSS Y JS.</p>
+                    <p>Disney hecho con HTML, CSS y JS.</p>
                     <div class="tags">
                         <span class="tag html">HTML</span>
                         <span class="tag css">CSS</span>
@@ -318,38 +318,35 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
     <footer>
         <p>&copy; 2024 HISOK4.DEV</p>
     </footer>
+
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('navbarMenu');
-            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-        }
-    </script>
-    
-<script>
     document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll('.section');
+        const sections = document.querySelectorAll('.section');
 
-    const revealSection = function () {
-        const triggerBottom = window.innerHeight * 0.8;
+        const revealSection = function () {
+            const triggerBottom = window.innerHeight * 0.8;
 
-        sections.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
 
-            if (sectionTop < triggerBottom) {
-                section.classList.add('active');
-            }
-        });
-    };
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('active');
+                }
+            });
+        };
 
-    revealSection();
-    window.addEventListener('scroll', revealSection);
-});
+        revealSection();
+        window.addEventListener('scroll', revealSection);
+    });
 
-</script>
+    function toggleMenu() {
+        const menu = document.getElementById('navbarMenu');
+        menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+    </script>
+
 </body>
-
 </html>
