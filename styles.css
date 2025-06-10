@@ -127,7 +127,7 @@ body {
     font-family: 'HOCKES', sans-serif;
     font-weight: 100;
     animation: blink 3s infinite; /* Animación de parpadeo */
-    color: #ff69b4; /* Color rosa */
+    color: #00d9ff;; /* Color azul */
 }
 @keyframes blink {
   50% {
@@ -150,7 +150,7 @@ body {
   border-radius: 1000px;
   margin-bottom: -10px;
   border: 2px solid #ffffff;
-  box-shadow: 0 0 150px 35px rgba(255, 124, 146, 0.75); /* Aura rosada */
+  box-shadow: 0 0 150px 35px rgb(0 220 255 / 75%);
   animation: border-color-change 3s infinite alternate;
 }
 
@@ -159,10 +159,10 @@ body {
       border-color: #ffffff; /* Inicial color rosa */
   }
   50% {
-      border-color: #ffd3e9; /* Cambio a azul */
+      border-color: #0085ff; /* Cambio a azul */
   }
   100% {
-      border-color: #ff69b4; /* Vuelta a color rosa */
+      border-color: #0085ff; /* Vuelta a color rosa */
   }
 }
 
